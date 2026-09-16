@@ -26,11 +26,13 @@ class Event(models.Model):
         Person,
         related_name="paticipants"
     )
+    def __str__(self):
+        return f'le titre est {self.title} et la catégorie est {self.category}'
     class Meta:
-        contraints=[
+        constraints=[
             models.CheckConstraint(check=models.Q(
                 evt_date__gt=datetime.now()
-            ))
+            ),name="Please Check your email!")
         ]
 class Participants(models.Model):
     person=models.ForeignKey(Person,on_delete=models.CASCADE)
