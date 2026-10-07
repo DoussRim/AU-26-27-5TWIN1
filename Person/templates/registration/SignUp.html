@@ -1,0 +1,6 @@
+<h2>Register Now</h2>
+<form method="POST">
+    {% csrf_token %}
+    {{ff.as_p}}
+    <input type="submit" value="SignUp">
+</form>

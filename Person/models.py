@@ -10,8 +10,8 @@ def valideEmail(value):
     if str(value).endswith('@esprit.tn')== False:
         raise ValidationError(f"Your email {value} must ends with @esprit.tn")
 class Person(AbstractUser):
-    #cin=models.CharField(primary_key=True,max_length=8,validators=[valideCin])
+    cin=models.CharField(primary_key=True,max_length=8,validators=[valideCin])
     #cin=models.CharField(primary_key=True,max_length=8,validators=[MaxLengthValidator(8),MinLengthValidator(8)])
-    cin=models.CharField(primary_key=True,max_length=8)
+    #cin=models.CharField(primary_key=True,max_length=8)
     email=models.EmailField('Email',max_length=50,unique=True,validators=[valideEmail])
     username=models.CharField(max_length=20,unique=True)
