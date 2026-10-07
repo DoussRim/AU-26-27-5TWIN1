@@ -117,7 +117,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
-
+MEDIA_ROOT=BASE_DIR/"images" #ou dans le disque dur
+MEDIA_URL="/images/"#Quelle adresse web pointe vers le fichier
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
@@ -125,3 +126,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL="Person.Person"
 LOGIN_REDIRECT_URL="aff"
 LOGOUT_REDIRECT_URL="aff"
+LOGIN_URL="log"

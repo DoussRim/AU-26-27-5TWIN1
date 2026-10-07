@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>event List</h2>
+{% for l in ll  %}
+    <ul>
+        <li><b>Title:</b>{{l.title}}</li>
+        <li><b>Description:</b>{{l.description}}</li>
+        <li><b>Category:</b>{{l.category}}</li>
+        <li><b>Nbe Participant:</b>{{l.nbe_participant}}</li>
+        <li><b>Event Date:</b>{{l.evt_date}}</li>
+        <li><b>Status:</b>
+            {% if l.state %}Accepted
+            {% else %}Pending{% endif %}
+        </li>
+        <li><b>Organizer: </b>{{l.organizer.email}}</li>
+        <li><b>Participants: </b>{{l.participant.count}}<br>
+            {% for p in l.participant.all %}
+                {{p.username}} {% if not forloop.last %}|{% endif %}
+            {% endfor %}
+        </li>
+        <li><b>Event Image:</b>
+            {% if l.image %}
+                <img src="{{l.image.url}}">
+            {% else %} No Image
+            {% endif %}</li>
+    </ul>
+{% endfor %}
+{% endblock content %}
