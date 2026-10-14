@@ -1,0 +1,7 @@
+<form method="POST">
+    {% csrf_token %}
+<p>Are you sur to delete <b>{{object.title}} </b> event?
+    {{form}}
+    <input type ="submit" value="Confirm">
+    <a href="{% url "list" %}">Cancel</a>
+</form>

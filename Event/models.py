@@ -10,7 +10,7 @@ class Event(models.Model):
     )
     title=models.CharField(max_length=50)
     description =models.TextField()
-    image=models.ImageField(null=True,blank=True,upload_to="images/")
+    image=models.ImageField(null=True,blank=True,upload_to="event/")
     category=models.CharField(max_length=20,choices=category_list)
     state=models.BooleanField(default=False)
     nbe_participant=models.IntegerField(default=0)

@@ -23,6 +23,9 @@
                 <img src="{{l.image.url}}">
             {% else %} No Image
             {% endif %}</li>
+             <li><a href="{% url "Det" l.id %}">Details</a></li>
+            <li><a href="{% url "Supp" l.id %}">Delete</a></li>
+            <li><a href="{% url "Up" l.id %}">Update</a></li>
     </ul>
 {% endfor %}
 {% endblock content %}

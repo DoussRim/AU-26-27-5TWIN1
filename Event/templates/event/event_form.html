@@ -1,0 +1,8 @@
+{% if object %}<h2>Update Event</h2>
+{% comment %} {% if form.instance.pk %} {% endcomment %}
+{% else %}<h2>Add Event</h2>{% endif %}
+<form method="POST"> 
+    {% csrf_token %}
+    {{form}}
+    <input type='submit' value="{% if object %}Update {% else %}Add{% endif %}">
+</form>
